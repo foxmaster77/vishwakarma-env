@@ -22,6 +22,7 @@ dependencies = [
     "uvicorn>=0.24.0",
     "httpx>=0.25.0",
     "pydantic>=2.0.0",
+    "openenv-core>=0.2.0",
 ]
 
 [project.optional-dependencies]
@@ -44,4 +45,5 @@ include = ["vishwakarma_env*"]
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
+
 
