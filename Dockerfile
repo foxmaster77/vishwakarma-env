@@ -13,7 +13,13 @@ RUN pip install --no-cache-dir \
     openai anthropic
 
 # ── source ───────────────────────────────────────────────────────────────────
-COPY vishwakarma_env/ ./vishwakarma_env/
+# The repo root IS the package. Copy the whole source tree as vishwakarma_env/
+# so it is importable as `import vishwakarma_env`.
+COPY models.py        ./vishwakarma_env/models.py
+COPY client.py        ./vishwakarma_env/client.py
+COPY __init__.py      ./vishwakarma_env/__init__.py
+COPY server/          ./vishwakarma_env/server/
+COPY data/            ./vishwakarma_env/data/
 COPY inference.py     ./inference.py
 COPY start.sh         ./start.sh
 RUN chmod +x start.sh
