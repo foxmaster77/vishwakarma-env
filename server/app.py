@@ -52,6 +52,20 @@ class ActionRequest(BaseModel):
 # Endpoints
 # ─────────────────────────────────────────────
 
+@app.get("/")
+async def root():
+    """Landing page — links to docs and health."""
+    return {
+        "name": "Vishwakarma Factory Environment",
+        "version": "1.0.0",
+        "status": "ok",
+        "factory": factory_id,
+        "docs": "/docs",
+        "health": "/health",
+        "endpoints": ["/reset", "/step", "/state", "/factories", "/leaderboard"],
+    }
+
+
 @app.post("/reset")
 async def reset():
     """Start a new factory episode."""
