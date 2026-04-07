@@ -32,7 +32,7 @@ dev = [
 ]
 
 [project.scripts]
-vishwakarma-server = "vishwakarma_env.server.app:app"
+server = "vishwakarma_env.server.app:app"
 
 [tool.setuptools.packages.find]
 where = ["."]
@@ -44,3 +44,4 @@ include = ["vishwakarma_env*"]
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
+
