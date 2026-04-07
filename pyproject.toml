@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "vishwakarma-env"
+version = "1.0.0"
+description = "OpenEnv RL environment for AI-driven factory operations — train LLMs to manage Indian manufacturing plants"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+keywords = ["reinforcement-learning", "openenv", "factory", "manufacturing", "rl", "llm"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "fastapi>=0.104.0",
+    "uvicorn>=0.24.0",
+    "httpx>=0.25.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+    "httpx>=0.25.0",
+]
+
+[project.scripts]
+vishwakarma-server = "vishwakarma_env.server.app:app"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["vishwakarma_env*"]
+
+[tool.setuptools.package-data]
+"vishwakarma_env" = ["data/*.json"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
