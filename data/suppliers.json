@@ -1,0 +1,62 @@
+{
+  "suppliers": [
+    {
+      "id": "primary_steel_pune",
+      "name": "Tata Steel Pune Distributor",
+      "material": "mild_steel_IS2062",
+      "cost_per_ton_INR": 52000,
+      "reliability": 0.92,
+      "lead_time_hours": 4,
+      "min_order_tons": 1.0,
+      "max_daily_tons": 20.0,
+      "delay_probability": 0.08,
+      "delay_hours_avg": 2,
+      "bis_certified": true,
+      "city": "Pune"
+    },
+    {
+      "id": "backup_steel_mumbai",
+      "name": "JSW Steel Mumbai",
+      "material": "mild_steel_IS2062",
+      "cost_per_ton_INR": 67000,
+      "reliability": 0.97,
+      "lead_time_hours": 6,
+      "min_order_tons": 0.5,
+      "max_daily_tons": 50.0,
+      "delay_probability": 0.03,
+      "delay_hours_avg": 1,
+      "bis_certified": true,
+      "city": "Mumbai",
+      "note": "Premium backup — 29% more expensive but highly reliable"
+    },
+    {
+      "id": "local_scrap_dealer",
+      "name": "Pune Scrap Metal Traders",
+      "material": "recycled_steel",
+      "cost_per_ton_INR": 38000,
+      "reliability": 0.70,
+      "lead_time_hours": 2,
+      "min_order_tons": 0.2,
+      "max_daily_tons": 5.0,
+      "delay_probability": 0.30,
+      "delay_hours_avg": 3,
+      "bis_certified": false,
+      "city": "Pune",
+      "note": "Cheap but unreliable. Quality varies. Not BIS certified."
+    },
+    {
+      "id": "aluminium_supplier",
+      "name": "Hindalco Aluminium Nashik",
+      "material": "aluminium_6061",
+      "cost_per_ton_INR": 195000,
+      "reliability": 0.95,
+      "lead_time_hours": 8,
+      "min_order_tons": 0.5,
+      "max_daily_tons": 10.0,
+      "delay_probability": 0.05,
+      "delay_hours_avg": 2,
+      "bis_certified": true,
+      "city": "Nashik"
+    }
+  ]
+}

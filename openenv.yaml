@@ -1,0 +1,44 @@
+name: vishwakarma-env
+version: 1.0.0
+description: >
+  RL environment for AI-driven factory operations.
+  Train LLMs to manage Indian manufacturing plants under real industrial crises.
+author: vishwakarma-env contributors
+license: MIT
+
+environment:
+  type: sequential
+  steps_per_episode: 16
+  action_space: discrete+continuous
+  observation_space: structured
+
+reward:
+  components:
+    - production: 0.40
+    - cost: 0.25
+    - crisis_response: 0.20
+    - safety: 0.10
+    - long_term: 0.05
+  range: [-10, 25]
+
+factories:
+  - auto_components_pune
+  - pharma_packaging_hyderabad
+  - textile_mill_surat
+
+crisis_types:
+  - machine_breakdown
+  - supply_shock
+  - demand_spike
+  - quality_failure
+  - worker_crisis
+
+standards:
+  safety: BIS IS-3696
+  materials: BIS IS-2062, IS-733, IS-6911
+  physics: M/M/c queuing theory
+
+deployment:
+  port: 7860
+  docker: true
+  huggingface_spaces: true

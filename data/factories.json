@@ -1,0 +1,91 @@
+{
+  "factories": [
+    {
+      "id": "auto_components_pune",
+      "name": "Pune Auto Components Plant",
+      "industry": "auto_components",
+      "city": "Pune",
+      "floor_width_m": 40,
+      "floor_length_m": 60,
+      "total_machines": 8,
+      "total_workers": 26,
+      "shifts_per_day": 2,
+      "target_units_per_day": 600,
+      "budget_per_day_INR": 280000,
+      "daily_stock_consumption_tons": 3.2,
+      "initial_stock_tons": 8.0,
+      "machines": [
+        "cnc_mill",
+        "cnc_mill",
+        "lathe",
+        "lathe",
+        "welding_station",
+        "welding_station",
+        "qc_station",
+        "painting_booth"
+      ],
+      "primary_supplier": "primary_steel_pune",
+      "backup_supplier": "backup_steel_mumbai",
+      "product": "Steel Brackets & Clamps",
+      "description": "Tier-2 supplier to Maruti Suzuki. Produces steel brackets and clamps for automotive assembly."
+    },
+    {
+      "id": "pharma_packaging_hyderabad",
+      "name": "Hyderabad Pharma Packaging Unit",
+      "industry": "pharma_packaging",
+      "city": "Hyderabad",
+      "floor_width_m": 30,
+      "floor_length_m": 50,
+      "total_machines": 6,
+      "total_workers": 18,
+      "shifts_per_day": 3,
+      "target_units_per_day": 400,
+      "budget_per_day_INR": 160000,
+      "daily_stock_consumption_tons": 0.8,
+      "initial_stock_tons": 3.0,
+      "machines": [
+        "cnc_mill",
+        "drill_press",
+        "qc_station",
+        "qc_station",
+        "painting_booth",
+        "grinding_machine"
+      ],
+      "primary_supplier": "aluminium_supplier",
+      "backup_supplier": "backup_steel_mumbai",
+      "product": "Aluminium Blister Packaging Components",
+      "description": "Produces precision aluminium components for pharmaceutical packaging. FDA-equivalent quality standards."
+    },
+    {
+      "id": "textile_mill_surat",
+      "name": "Surat Textile Machinery Plant",
+      "industry": "textile_machinery",
+      "city": "Surat",
+      "floor_width_m": 50,
+      "floor_length_m": 80,
+      "total_machines": 10,
+      "total_workers": 35,
+      "shifts_per_day": 2,
+      "target_units_per_day": 300,
+      "budget_per_day_INR": 350000,
+      "daily_stock_consumption_tons": 4.5,
+      "initial_stock_tons": 12.0,
+      "machines": [
+        "cnc_mill",
+        "cnc_mill",
+        "lathe",
+        "lathe",
+        "lathe",
+        "press_brake",
+        "welding_station",
+        "welding_station",
+        "grinding_machine",
+        "qc_station"
+      ],
+      "primary_supplier": "primary_steel_pune",
+      "backup_supplier": "backup_steel_mumbai",
+      "product": "Loom Frames & Shuttle Components",
+      "description": "Heavy manufacturing of textile loom components. High precision required. Exported to Bangladesh and Vietnam."
+    }
+  ]
+}
