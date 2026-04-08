@@ -1,6 +1,6 @@
 ﻿[build-system]
 requires = ["setuptools>=68", "wheel"]
-build-backend = "setuptools.backends.legacy:build"
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "vishwakarma-env"
@@ -19,8 +19,4 @@ dependencies = [
 ]
 
 [project.scripts]
-server = "vishwakarma_env.server.app:main"
-
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["vishwakarma_env*"]
+server = "server.app:main"
