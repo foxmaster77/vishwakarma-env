@@ -4,7 +4,7 @@ FastAPI server that exposes the Vishwakarma environment via HTTP.
 """
 
 import os
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional
@@ -31,7 +31,7 @@ env = VishwakarmaEnvironment(factory_id=factory_id)
 
 
 # ─────────────────────────────────────────────
-# Pydantic request/response models
+# Pydantic request model
 # ─────────────────────────────────────────────
 
 class ActionRequest(BaseModel):
@@ -54,14 +54,12 @@ class ActionRequest(BaseModel):
 
 @app.post("/reset")
 async def reset():
-    """Start a new factory episode."""
     obs = env.reset()
     return _serialize_obs(obs)
 
 
 @app.post("/step")
 async def step(action: ActionRequest):
-    """Execute one time step with the given action."""
     from ..models import VishwakarmaAction
     act = VishwakarmaAction(**action.dict())
     obs = env.step(act)
@@ -70,7 +68,6 @@ async def step(action: ActionRequest):
 
 @app.get("/state")
 async def state():
-    """Get current episode metadata."""
     return env.state_info()
 
 
@@ -81,7 +78,6 @@ async def health():
 
 @app.get("/factories")
 async def list_factories():
-    """List available factory configurations."""
     return {
         "factories": [
             "auto_components_pune",
@@ -96,7 +92,6 @@ async def list_factories():
 # ─────────────────────────────────────────────
 
 def _serialize_obs(obs) -> dict:
-    """Convert observation dataclass to JSON-serializable dict."""
     return {
         "machines": [
             {
@@ -139,10 +134,14 @@ def _serialize_obs(obs) -> dict:
     }
 
 
-import uvicorn`ndef main():
+# ─────────────────────────────────────────────
+# ENTRYPOINT (CRITICAL)
+# ─────────────────────────────────────────────
+
+def main():
     import uvicorn
-    uvicorn.run(app, host='0.0.0.0', port=7860)
+    uvicorn.run("server.app:app", host="0.0.0.0", port=8000)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
-
