@@ -19,4 +19,4 @@ dependencies = [
 ]
 
 [project.scripts]
-server = "server.app:main"
+server = "vishwakarma_env.server.app:main"
